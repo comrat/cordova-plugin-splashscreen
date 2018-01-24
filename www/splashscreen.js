@@ -25,6 +25,9 @@ var splashscreen = {
     show:function() {
         exec(null, null, "SplashScreen", "show", []);
     },
+    hideSpinner:function() {
+        exec(null, null, "SplashScreen", "hideSpinner", []);
+    },
     hide:function() {
         exec(null, null, "SplashScreen", "hide", []);
     }

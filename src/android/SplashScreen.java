@@ -172,6 +172,8 @@ public class SplashScreen extends CordovaPlugin {
                     webView.postMessage("splashscreen", "show");
                 }
             });
+        } else if (action.equals("hideSpinner")) {
+            this.spinnerStop();
         } else {
             return false;
         }
@@ -233,7 +235,7 @@ public class SplashScreen extends CordovaPlugin {
                         fadeOut.setAnimationListener(new Animation.AnimationListener() {
                             @Override
                             public void onAnimationStart(Animation animation) {
-                                spinnerStop();
+                                // spinnerStop();
                             }
 
                             @Override
@@ -250,7 +252,7 @@ public class SplashScreen extends CordovaPlugin {
                             }
                         });
                     } else {
-                        spinnerStop();
+                        // spinnerStop();
                         splashDialog.dismiss();
                         splashDialog = null;
                         splashImageView = null;
