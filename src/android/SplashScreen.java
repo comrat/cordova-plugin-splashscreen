@@ -56,7 +56,6 @@ public class SplashScreen extends CordovaPlugin {
     private static final int DEFAULT_FADE_DURATION = 500;
     private static Dialog splashDialog;
     private static ProgressDialog spinnerDialog;
-    private static boolean firstShow = true;
     private static boolean lastHideAfterDelay; // https://issues.apache.org/jira/browse/CB-9094
 
     /**
@@ -108,14 +107,8 @@ public class SplashScreen extends CordovaPlugin {
         // Save initial orientation.
         orientation = cordova.getActivity().getResources().getConfiguration().orientation;
 
-        if (firstShow) {
-            boolean autoHide = preferences.getBoolean("AutoHideSplashScreen", true);
-            showSplashScreen(autoHide);
-        }
-
-        if (preferences.getBoolean("SplashShowOnlyFirstTime", true)) {
-            firstShow = false;
-        }
+        boolean autoHide = preferences.getBoolean("AutoHideSplashScreen", true);
+        showSplashScreen(autoHide);
     }
 
     /**
