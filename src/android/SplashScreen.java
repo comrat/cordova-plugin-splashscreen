@@ -228,7 +228,7 @@ public class SplashScreen extends CordovaPlugin {
                         fadeOut.setAnimationListener(new Animation.AnimationListener() {
                             @Override
                             public void onAnimationStart(Animation animation) {
-                                // spinnerStop();
+                                spinnerStop();
                             }
 
                             @Override
@@ -329,7 +329,8 @@ public class SplashScreen extends CordovaPlugin {
                     handler.postDelayed(new Runnable() {
                         public void run() {
                             if (lastHideAfterDelay) {
-                                removeSplashScreen(false);
+                                // Don't hide splash screen user must do it explicitly
+                                // removeSplashScreen(false);
                             }
                         }
                     }, effectiveSplashDuration);
